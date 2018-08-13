@@ -10,8 +10,10 @@ namespace TournamentLibrary
     {
         /// <summary>
         /// A list of members that will fill the team
-        /// </summary>
+        /// </summary>    
         public List<PersonModel> TeamMembers { get; set; } = new List<PersonModel>();
+        //This ability to declare a list by this way is something introduced in C# 6.0
+        //before it we must declare a constructor that instantiate the list like a new list
 
         /// <summary>
         /// The Team's name.

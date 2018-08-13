@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frmDashboard", "frmDashboard\frmDashboard.csproj", "{9FDBA3F0-5836-40C8-BEFB-7761FB19638E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerUI", "frmDashboard\TrackerUI.csproj", "{9FDBA3F0-5836-40C8-BEFB-7761FB19638E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentLibrary", "TournamentLibrary\TournamentLibrary.csproj", "{96430CDF-0BBF-494D-8E20-D7F3505FDD8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TournamentLibrary", "TournamentLibrary\TournamentLibrary.csproj", "{96430CDF-0BBF-494D-8E20-D7F3505FDD8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

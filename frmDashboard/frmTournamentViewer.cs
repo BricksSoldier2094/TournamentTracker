@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace frmDashboard
 {
-    public partial class Form1 : Form
+    public partial class frmTournamentViewer : Form
     {
-        public Form1()
+        public frmTournamentViewer()
         {
             InitializeComponent();
         }

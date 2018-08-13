@@ -22,7 +22,7 @@ namespace TournamentLibrary
 
 
         /// <summary>
-        /// A lista of team that will participate
+        /// A list of team that will participate in the tournament
         /// </summary>
         public List<TeamModel> EnteredTeam { get; set; } = new List<TeamModel>();
 
