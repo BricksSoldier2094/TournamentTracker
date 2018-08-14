@@ -45,6 +45,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCreatePrize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreatePrize.Designer.cs">
+      <DependentUpon>frmCreatePrize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreateTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateTeam.Designer.cs">
+      <DependentUpon>frmCreateTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreateTournament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateTournament.Designer.cs">
+      <DependentUpon>frmCreateTournament.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTournamentDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTournamentDashboard.Designer.cs">
+      <DependentUpon>frmTournamentDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTournamentViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,6 +77,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCreatePrize.resx">
+      <DependentUpon>frmCreatePrize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreateTeam.resx">
+      <DependentUpon>frmCreateTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreateTournament.resx">
+      <DependentUpon>frmCreateTournament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTournamentDashboard.resx">
+      <DependentUpon>frmTournamentDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTournamentViewer.resx">
       <DependentUpon>frmTournamentViewer.cs</DependentUpon>
     </EmbeddedResource>

@@ -16,7 +16,7 @@ namespace frmDashboard
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTournamentViewer());
+            Application.Run(new frmTournamentDashboard());
         }
     }
 }
