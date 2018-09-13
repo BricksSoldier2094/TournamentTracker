@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-/// <summary>
-/// This class represents the basical class of the application. And it means
-/// the team member that will fill the team.
-/// </summary>
+
 namespace TournamentLibrary
 {
+    /// <summary>
+    /// This class represents the basical class of the application. And it means
+    /// the team member that will fill the team.
+    /// </summary>
     public class PersonModel
     {
         /// <summary>

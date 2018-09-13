@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-/// <summary>
-/// This class is used to create a prize inside our application
-/// </summary>
+
 
 namespace TournamentLibrary
 {
-    class PrizeModel
+    /// <summary>
+    /// This class is used to create a prize inside our application
+    /// </summary>
+    public class PrizeModel
     {
         /// <summary>
         /// The number of a place of a prize

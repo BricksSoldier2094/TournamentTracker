@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-/// <summary>
-/// This class is used to create a team, inside that we have:
-/// </summary>
+
 namespace TournamentLibrary
 {
+    /// <summary>
+    /// This class is used to create a team in our application
+    /// </summary>
     public class TeamModel
     {
         /// <summary>

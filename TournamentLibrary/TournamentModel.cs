@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-/// <summary>
-/// This class represents a tournament unit inside our tournament tracker
-/// </summary>
+
 
 namespace TournamentLibrary
 {
-    class TournamentModel
+    /// <summary>
+    /// This class represents a tournament unit inside our tournament tracker
+    /// </summary>
+    public class TournamentModel
     {
         /// <summary>
         /// The tournament's name

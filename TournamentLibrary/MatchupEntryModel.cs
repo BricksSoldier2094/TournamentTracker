@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-/// <summary>
-/// This class represents the team participating on to the tournament
-/// when a team starts to participate in a tournament, then it will fill this
-/// and with that we're going to be able to make te list of list of matchups (rounds)
-/// </summary>
+
 
 namespace TournamentLibrary
-{
-    class MatchupEntryModel
+{/// <summary>
+/// This class represents the entry of a team participating on to the tournament.)
+/// </summary>
+    public class MatchupEntryModel
     {
         /// <summary>
         /// The team that will participate in a tournament
