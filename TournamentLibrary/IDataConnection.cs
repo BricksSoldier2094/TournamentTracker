@@ -11,7 +11,7 @@ namespace TournamentLibrary
     public interface IDataConnection
     {
         /// <summary>
-        /// A contract clausule to standardize the method to create a prize the data connections.
+        /// A contract clausule. Implements the method to create a new prize in the database
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>

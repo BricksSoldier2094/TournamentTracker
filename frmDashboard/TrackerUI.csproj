@@ -117,5 +117,11 @@
   <ItemGroup>
     <Folder Include="Icons\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TournamentLibrary\TournamentLibrary.csproj">
+      <Project>{96430cdf-0bbf-494d-8e20-d7f3505fdd8f}</Project>
+      <Name>TournamentLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

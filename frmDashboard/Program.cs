@@ -16,7 +16,11 @@ namespace frmDashboard
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTournamentDashboard());
+
+            //Initialize the database connections
+            TournamentLibrary.GlobalConfig.InitializeConnections(true, true);
+
+            Application.Run(new frmCreatePrize());
         }
     }
 }

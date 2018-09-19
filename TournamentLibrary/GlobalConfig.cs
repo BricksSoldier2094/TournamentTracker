@@ -11,9 +11,11 @@ namespace TournamentLibrary
     public static class GlobalConfig
     {
         /// <summary>
-        /// A list of Connections
+        /// A list of Connections, holds everything that implements an IDataConnection Interface        
         /// </summary>
-        public static List<IDataConnection> Connections { get; private set; }
+        public static List<IDataConnection> Connections { get; private set; } = new List<IDataConnection>();
+        /// With that we actually can put in our list of connections any connection that implements this Interface
+
 
         /// <summary>
         /// Help the application to determine what kind of database source is
@@ -25,12 +27,17 @@ namespace TournamentLibrary
         {
             if(database)
             {
-                //TODO Create the SQL Connection
+                //TODO - Set up the SQL Connector properly
+                SqlConnector MySqlConnector = new SqlConnector();
+                Connections.Add(MySqlConnector);
+                
             }
 
             if(textfiles)
             {
                 //TODO Create the Text Connection
+                TextConnector MyTextConnector = new TextConnector();
+                Connections.Add(MyTextConnector);
             }
 
 
