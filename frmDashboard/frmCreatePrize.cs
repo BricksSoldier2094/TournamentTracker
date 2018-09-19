@@ -34,6 +34,9 @@ namespace frmDashboard
                     db.CreatePrize(model);
                 }
 
+                MessageBox.Show("Prize created successfully!", "Prize created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CleanFormFields();
+
             }
             else
             {
@@ -41,6 +44,7 @@ namespace frmDashboard
             }
         }
 
+        #region Method to validate the form
         /// <summary>
         /// Validates the form assuring the information is correctly.
         /// </summary>
@@ -89,6 +93,19 @@ namespace frmDashboard
 
             return output;
         }
+        #endregion
 
+        #region Method to Clean the text fields of the form
+
+        private void CleanFormFields()
+        {
+            placeNameValue.Clear();
+            placeNumberValue.Clear();
+            prizeAmountValue.Text = "0";
+            prizePercentageValue.Text = "0";
+            
+        }
+
+        #endregion
     }
 }
