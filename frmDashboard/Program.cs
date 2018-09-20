@@ -18,7 +18,7 @@ namespace frmDashboard
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Initialize the database connections
-            TournamentLibrary.GlobalConfig.InitializeConnections(true, true);
+            TrackerLibrary.GlobalConfig.InitializeConnections(true, true);
 
             Application.Run(new frmCreatePrize());
         }

@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TournamentLibrary;
-using TournamentLibrary.DataAcess;
-using TournamentLibrary.Models;
+using TrackerLibrary;
+using TrackerLibrary.Models;
+using TrackerLibrary.DataAcess;
 
 namespace frmDashboard
 {

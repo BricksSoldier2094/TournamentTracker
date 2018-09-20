@@ -118,9 +118,9 @@
     <Folder Include="Icons\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TournamentLibrary\TournamentLibrary.csproj">
-      <Project>{96430cdf-0bbf-494d-8e20-d7f3505fdd8f}</Project>
-      <Name>TournamentLibrary</Name>
+    <ProjectReference Include="..\TrackerLibrary\TrackerLibrary.csproj">
+      <Project>{e597725a-1a99-4a6a-b2a4-4d1b2e762f84}</Project>
+      <Name>TrackerLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

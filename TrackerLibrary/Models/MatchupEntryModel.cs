@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-
-
-namespace TournamentLibrary.Models
+namespace TrackerLibrary.Models
 {
     /// <summary>
     /// This class represents the entry of a team participating on to the tournament.)
     /// </summary>
     public class MatchupEntryModel
     {
+
         /// <summary>
         /// The team that will participate in a tournament
         /// </summary>
@@ -25,5 +26,6 @@ namespace TournamentLibrary.Models
         /// I don't kown, need to review at Tim Corey's videos.
         /// </summary>
         public MatchupModel ParentMatchup { get; set; }
+
     }
 }
