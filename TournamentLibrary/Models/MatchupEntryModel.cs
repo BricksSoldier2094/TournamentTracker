@@ -4,7 +4,7 @@ using System.Text;
 
 
 
-namespace TournamentLibrary
+namespace TournamentLibrary.Models
 {/// <summary>
 /// This class represents the entry of a team participating on to the tournament.)
 /// </summary>

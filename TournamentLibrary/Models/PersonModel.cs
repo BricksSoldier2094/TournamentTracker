@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 
-namespace TournamentLibrary
+namespace TournamentLibrary.Models
 {
     /// <summary>
     /// This class represents the basical class of the application. And it means

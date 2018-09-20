@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TournamentLibrary.Models;
 
-namespace TournamentLibrary
+namespace TournamentLibrary.DataAcess
 {
-    //TODO - Wire up the CreatePrize for text files
-
     /// <summary>
-    /// The TextConnector to access the TournamentTracker Text Database
+    /// The SQLConnector to access the TournamentTracker SQL Database
     /// </summary>
-    public class TextConnector : IDataConnection
+    public class SqlConnector : IDataConnection
     {
+        // TODO - Make the create prize method actually save to the database
+
         /// <summary>
-        /// Create a new prize in the TournamentTracker Text DataBase
+        /// Create a new prize in the TournamentTracker SQL DataBase
         /// </summary>
         /// <param name="model">The prize information</param>
         /// <returns>The prize information, including the unique identifier</returns>

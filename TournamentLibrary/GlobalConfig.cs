@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TournamentLibrary.DataAcess;
 
 namespace TournamentLibrary
 {
@@ -42,5 +43,16 @@ namespace TournamentLibrary
 
 
         }
+
+        /// <summary>
+        /// Contains the connection string available on the app.config file.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static string CnnString(string name)
+        {
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+        }
+
     }
 }

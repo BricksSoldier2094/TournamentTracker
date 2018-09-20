@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TournamentLibrary
+namespace TournamentLibrary.Models
 {
     /// <summary>
     /// This class is used to create a team in our application

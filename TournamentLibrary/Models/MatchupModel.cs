@@ -4,7 +4,7 @@ using System.Text;
 
 
 
-namespace TournamentLibrary
+namespace TournamentLibrary.Models
 {
     /// <summary>
     /// This class descibres the matchup that will fill the list of list of matchups and as we know

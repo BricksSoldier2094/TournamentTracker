@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TournamentLibrary;
+using TournamentLibrary.DataAcess;
+using TournamentLibrary.Models;
 
 namespace frmDashboard
 {

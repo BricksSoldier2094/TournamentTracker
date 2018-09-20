@@ -4,7 +4,7 @@ using System.Text;
 
 
 
-namespace TournamentLibrary
+namespace TournamentLibrary.Models
 {
     /// <summary>
     /// This class represents a tournament unit inside our tournament tracker
