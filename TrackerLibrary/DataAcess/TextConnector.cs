@@ -7,7 +7,7 @@ using TrackerLibrary.Models;
 
 namespace TrackerLibrary.DataAcess
 {
-    //TODO - Wire up the CreatePrize for text files
+    
 
     /// <summary>
     /// The TextConnector to access the TournamentTracker Text Database

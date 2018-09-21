@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,9 @@ namespace TrackerLibrary
     {
 
         /// <summary>
-        /// A list of Connections, holds everything that implements an IDataConnection Interface        
+        /// A connection established in the app.config file.    
         /// </summary>
-        public static List<IDataConnection> Connections { get; private set; } = new List<IDataConnection>();
+        public static IDataConnection Connection { get; private set; }
         /// With that we actually can put in our list of connections any connection that implements this Interface
 
 
@@ -27,21 +28,22 @@ namespace TrackerLibrary
         /// </summary>
         /// <param name="database"></param>
         /// <param name="textfiles"></param>
-        public static void InitializeConnections(bool database, bool textfiles)
-        {
-            if (database)
+        public static void InitializeConnections(DataBaseType db)
+        {          
+
+            if (db == DataBaseType.Sql)
             {
-                //TODO - Set up the SQL Connector properly
+                
                 SqlConnector MySqlConnector = new SqlConnector();
-                Connections.Add(MySqlConnector);
+                Connection = MySqlConnector;
 
             }
 
-            if (textfiles)
+            else if (db == DataBaseType.TextFile)
             {
                 //TODO Create the Text Connection
                 TextConnector MyTextConnector = new TextConnector();
-                Connections.Add(MyTextConnector);
+                Connection = MyTextConnector;
             }
 
 
@@ -52,9 +54,9 @@ namespace TrackerLibrary
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public static void CnnString(string name)
+        public static string CnnString(string name)
         {
-           // return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+            return ConfigurationManager.ConnectionStrings["Tournaments"].ConnectionString;
         }
 
     }
