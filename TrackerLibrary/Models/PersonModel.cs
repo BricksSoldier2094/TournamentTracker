@@ -12,6 +12,10 @@ namespace TrackerLibrary.Models
     /// </summary>
     public class PersonModel
     {
+        /// <summary>
+        /// The unique identifier for the person
+        /// </summary>
+        public int Id { get; set; }
 
         /// <summary>
         /// First name of the person
@@ -31,7 +35,7 @@ namespace TrackerLibrary.Models
         /// <summary>
         /// The CellPhone number of the person
         /// </summary>
-        public string CellPhone { get; set; }
+        public string CellPhoneNumber { get; set; }
 
     }
 }

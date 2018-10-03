@@ -13,7 +13,34 @@ namespace TrackerLibrary.DataAcess
     /// The SQLConnector to access the TournamentTracker SQL Database
     /// </summary>
     public class SqlConnector : IDataConnection
-    {        
+    {
+        /// <summary>
+        /// Create a new person entry in the TournamentTracker SQL DataBase
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public PersonModel CreatePerson(PersonModel model)
+        {
+            //Stabilish the use of a connection inside the Using statement
+            //When this block of code is already executed then this connection
+            //will be automatic destroyed
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Tournaments")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@FirstName", model.FirstName);
+                p.Add("@LastName", model.LastName);
+                p.Add("@EmailAddress", model.EmailAddress);
+                p.Add("@CellPhoneNumber", model.CellPhoneNumber);
+
+                p.Add("@Id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spPeople_Insert", p, commandType: CommandType.StoredProcedure);
+
+                model.Id = p.Get<int>("@Id");
+
+                return model;
+            }
+        }
 
         /// <summary>
         /// Create a new prize in the TournamentTracker SQL DataBase

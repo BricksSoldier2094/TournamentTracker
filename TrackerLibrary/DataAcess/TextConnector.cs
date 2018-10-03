@@ -16,9 +16,41 @@ namespace TrackerLibrary.DataAcess
     public class TextConnector : IDataConnection
     {
         /// <summary>
-        /// The nome of the file that keeps the data of the prizes created
+        /// The name of the file that keeps the data of the prizes created
         /// </summary>
         private const string PrizesFile = "PrizeModels.csv";
+
+        /// <summary>
+        /// The name of the file that keeps the data of the people created
+        /// </summary>
+        private const string PeopleFile = "PersonModels.csv";
+
+
+        /// <summary>
+        /// Create a new person in the TournamentTracker Text DataBase
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public PersonModel CreatePerson(PersonModel model)
+        {
+            List<PersonModel> people = PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
+
+            int currentId = 1;
+
+            if(people.Count > 0)
+            {
+                currentId = currentId = people.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+
+            model.Id = currentId;
+
+            people.Add(model);
+
+            people.SavePeopleFile(PeopleFile);
+
+            return model;
+
+        }
 
         /// <summary>
         /// Create a new prize in the TournamentTracker Text DataBase

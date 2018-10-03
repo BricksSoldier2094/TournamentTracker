@@ -65,7 +65,34 @@ namespace TrackerLibrary.DataAcess.TextHelpers
                 p.PrizePercentage = double.Parse(cols[4]);
                 output.Add(p);                
             }
+
             return output;
+
+        }
+
+        /// <summary>
+        /// Convert the text to a list of Person Model
+        /// </summary>
+        /// <param name="lines"></param>
+        /// <returns></returns>
+        public static List<PersonModel> ConvertToPersonModels(this List<string> lines)
+        {
+            List<PersonModel> output = new List<PersonModel>();
+
+            foreach (string line in lines)
+            {
+                string[] cols = line.Split(',');
+                PersonModel p = new PersonModel();
+                p.Id = int.Parse(cols[0]);
+                p.FirstName = cols[1];
+                p.LastName = cols[2];
+                p.EmailAddress = cols[3];
+                p.CellPhoneNumber = cols[4];
+                output.Add(p);                
+            }
+
+            return output;
+
         }
 
         /// <summary>
@@ -80,6 +107,24 @@ namespace TrackerLibrary.DataAcess.TextHelpers
             foreach (PrizeModel p in models)
             {
                 lines.Add($"{ p.Id },{ p.PlaceNumber },{ p.PlaceName },{ p.PrizeAmount },{ p.PrizePercentage }");
+            }
+
+            File.WriteAllLines(fileName.FullFilePath(), lines);
+
+        }
+
+        /// <summary>
+        /// Saves the list of Person, like a list of strings, in the file.
+        /// </summary>
+        /// <param name="models"></param>
+        /// <param name="fileName"></param>
+        public static void SavePeopleFile(this List<PersonModel> models, string fileName)
+        {
+            List<string> lines = new List<string>();
+
+            foreach (PersonModel p in models)
+            {
+                lines.Add($"{ p.Id },{ p.FirstName },{ p.LastName },{ p.EmailAddress },{ p.CellPhoneNumber }");
             }
 
             File.WriteAllLines(fileName.FullFilePath(), lines);

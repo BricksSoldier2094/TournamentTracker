@@ -21,5 +21,12 @@ namespace TrackerLibrary.DataAcess
         /// <returns></returns>
         PrizeModel CreatePrize(PrizeModel model);
 
+        /// <summary>
+        /// A contract clausule. Implements the method to create a new person in the database
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        PersonModel CreatePerson(PersonModel model);
+
     }
 }

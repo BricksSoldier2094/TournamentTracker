@@ -21,7 +21,7 @@ namespace frmDashboard
             //Initialize the database connections
             TrackerLibrary.GlobalConfig.InitializeConnections(DataBaseType.TextFile);
 
-            Application.Run(new frmCreatePrize());
+            Application.Run(new frmCreateTeam());
         }
     }
 }
