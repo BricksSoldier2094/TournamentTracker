@@ -15,6 +15,11 @@ namespace TrackerLibrary.DataAcess
     public class SqlConnector : IDataConnection
     {
         /// <summary>
+        /// The constant that represents our CnnString Value. Used to avoid magic strings.
+        /// </summary>
+        private const string db = "Tournaments";
+
+        /// <summary>
         /// Create a new person entry in the TournamentTracker SQL DataBase
         /// </summary>
         /// <param name="model"></param>
@@ -24,7 +29,7 @@ namespace TrackerLibrary.DataAcess
             //Stabilish the use of a connection inside the Using statement
             //When this block of code is already executed then this connection
             //will be automatic destroyed
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Tournaments")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@FirstName", model.FirstName);
@@ -49,7 +54,7 @@ namespace TrackerLibrary.DataAcess
         /// <returns>The prize information, including the unique identifier</returns>
         public PrizeModel CreatePrize(PrizeModel model)
         {            
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Tournaments")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@PlaceNumber", model.PlaceNumber);
@@ -69,6 +74,23 @@ namespace TrackerLibrary.DataAcess
 
                 return model;
             }
+        }
+
+        /// <summary>
+        /// Get all the People available in the Members table on SQL DataBase.
+        /// </summary>
+        /// <returns></returns>
+        public List<PersonModel> GetPerson_All()
+        {
+            List<PersonModel> output;
+
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                output = connection.Query<PersonModel>("dbo.spPeople_GetAll").ToList();
+            }
+
+            return output;
+
         }
 
     }

@@ -83,5 +83,13 @@ namespace TrackerLibrary.DataAcess
             return model;
         }
 
+        /// <summary>
+        /// Get all the People available in the Members file on Text DataBase.
+        /// </summary>
+        /// <returns></returns>
+        public List<PersonModel> GetPerson_All()
+        {
+            return PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
+        }
     }
 }

@@ -15,18 +15,24 @@ namespace TrackerLibrary.DataAcess
     {
 
         /// <summary>
-        /// A contract clausule. Implements the method to create a new prize in the database
+        /// A contract clausule. Implements the method to create a new prize in the database.
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         PrizeModel CreatePrize(PrizeModel model);
 
         /// <summary>
-        /// A contract clausule. Implements the method to create a new person in the database
+        /// A contract clausule. Implements the method to create a new person in the database.
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         PersonModel CreatePerson(PersonModel model);
+
+        /// <summary>
+        /// Get all the person available in the data base.
+        /// </summary>
+        /// <returns></returns>
+        List<PersonModel> GetPerson_All();
 
     }
 }
