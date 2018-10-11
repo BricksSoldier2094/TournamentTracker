@@ -29,6 +29,13 @@ namespace TrackerLibrary.DataAcess
         PersonModel CreatePerson(PersonModel model);
 
         /// <summary>
+        /// A contract clausule. Implements the method to create a new Team in the database.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        TeamModel CreateTeam(TeamModel model);
+
+        /// <summary>
         /// Get all the person available in the data base.
         /// </summary>
         /// <returns></returns>

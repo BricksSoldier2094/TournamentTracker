@@ -77,6 +77,38 @@ namespace TrackerLibrary.DataAcess
         }
 
         /// <summary>
+        /// Create a new Team in the TournamentTracker SQL DataBase, saves every person like a TeamMember, in the TeamMember's table
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public TeamModel CreateTeam(TeamModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+
+                p.Add("@TeamName", model.TeamName);
+                p.Add("@Id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spTeams_Insert", p, commandType: CommandType.StoredProcedure);
+
+                model.Id = p.Get<int>("@Id");
+
+                foreach (PersonModel tm in model.TeamMembers)
+                {
+                    p = new DynamicParameters();
+                    p.Add("@TeamId", model.Id);
+                    p.Add("@PersonId", tm.Id);
+
+                    connection.Execute("dbo.spTeamMembers_Insert", p, commandType: CommandType.StoredProcedure);
+
+                }
+                
+                return model;
+            }
+        }
+
+        /// <summary>
         /// Get all the People available in the Members table on SQL DataBase.
         /// </summary>
         /// <returns></returns>
