@@ -28,7 +28,10 @@ namespace frmDashboard
             WireUpLists();
         }
 
-
+        #region Just a test
+        /// <summary>
+        /// Sample data to test a func.
+        /// </summary>
         private void CreateSampleData()
         {
             availableTeamMembers.Add(new PersonModel { FirstName = "Henrique", LastName = "Martins" });
@@ -38,7 +41,11 @@ namespace frmDashboard
             selectedTeamMembers.Add(new PersonModel { FirstName = "Keyt", LastName = "Martins" });
 
         }
+        #endregion
 
+        /// <summary>
+        /// Initialize the lists used in the form.
+        /// </summary>
         private void WireUpLists()
         {
             //It makes the bind actually work and refresh the data

@@ -36,7 +36,13 @@ namespace TrackerLibrary.DataAcess
         TeamModel CreateTeam(TeamModel model);
 
         /// <summary>
-        /// Get all the person available in the data base.
+        ///   A contract clausule. Implements the method to get all the teams available in the database
+        /// </summary>
+        /// <returns></returns>
+        List<TeamModel> GetTeam_All();
+
+        /// <summary>
+        ///  A contract clausule. Implements the method to get all the person available in the database.
         /// </summary>
         /// <returns></returns>
         List<PersonModel> GetPerson_All();

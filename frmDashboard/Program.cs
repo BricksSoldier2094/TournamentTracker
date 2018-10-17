@@ -19,9 +19,9 @@ namespace frmDashboard
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Initialize the database connections
-            TrackerLibrary.GlobalConfig.InitializeConnections(DataBaseType.TextFile);
+            TrackerLibrary.GlobalConfig.InitializeConnections(DataBaseType.Sql);
 
-            Application.Run(new frmCreateTeam());
+            Application.Run(new frmCreateTournament());
         }
     }
 }
