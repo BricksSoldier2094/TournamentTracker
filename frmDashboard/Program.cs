@@ -19,7 +19,7 @@ namespace frmDashboard
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Initialize the database connections
-            TrackerLibrary.GlobalConfig.InitializeConnections(DataBaseType.Sql);
+            TrackerLibrary.GlobalConfig.InitializeConnections(DataBaseType.TextFile);
 
             Application.Run(new frmCreateTournament());
         }

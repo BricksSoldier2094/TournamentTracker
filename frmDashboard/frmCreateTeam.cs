@@ -12,16 +12,27 @@ using TrackerLibrary.Models;
 
 namespace frmDashboard
 {
-
-
     public partial class frmCreateTeam : Form
     {
+
         private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
         private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
+        /// <summary>
+        /// Store whatever is passed in to our constructor.
+        /// </summary>
+        private ITeamRequester callingForm;
 
-        public frmCreateTeam()
+
+        /// <summary>
+        /// The Caller parameter allows us to know who is calling the form.
+        /// It allow us to pass back the created team.
+        /// </summary>
+        /// <param name="caller"></param>
+        public frmCreateTeam(ITeamRequester caller)
         {
             InitializeComponent();
+
+            callingForm = caller;
 
             //CreateSampleData();
 
@@ -155,9 +166,13 @@ namespace frmDashboard
                 TeamMembers = selectedTeamMembers
             };
 
-            t = GlobalConfig.Connection.CreateTeam(t);
+            GlobalConfig.Connection.CreateTeam(t);
 
-            // TODO - If we aren't closing this form after creation, reset the form.
+            callingForm.TeamComplete(t);
+
+            MessageBox.Show("Team sucessfully created!", "Team Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close();
 
         }
     }

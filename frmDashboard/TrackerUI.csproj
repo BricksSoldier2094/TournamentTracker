@@ -75,6 +75,8 @@
     <Compile Include="frmTournamentViewer.Designer.cs">
       <DependentUpon>frmTournamentViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="IPrizeRequester.cs" />
+    <Compile Include="ITeamRequester.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCreatePrize.resx">

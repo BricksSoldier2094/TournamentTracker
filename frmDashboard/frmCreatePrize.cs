@@ -15,9 +15,21 @@ namespace frmDashboard
 {
     public partial class frmCreatePrize : Form
     {
-        public frmCreatePrize()
+        /// <summary>
+        /// Store whatever is passed in to our constructor.
+        /// </summary>
+        IPrizeRequester callingForm;
+
+        /// <summary>
+        /// The Caller parameter allows us to know who is calling the form.
+        /// It allow us to pass back the created prize.
+        /// </summary>
+        /// <param name="caller"></param>
+        public frmCreatePrize(IPrizeRequester caller)
         {
             InitializeComponent();
+
+            callingForm = caller;
         }
 
         private void createPrizebutton_Click(object sender, EventArgs e)
@@ -30,12 +42,16 @@ namespace frmDashboard
                     placeNumberValue.Text,
                     prizeAmountValue.Text,
                     prizePercentageValue.Text);
-                
-                    GlobalConfig.Connection.CreatePrize(model);                
+
+                GlobalConfig.Connection.CreatePrize(model);
+
+                //Pass back the already created and vallidated form back from the caller.
+                callingForm.PrizeComplete(model);
 
                 MessageBox.Show("Prize created successfully!", "Prize created", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CleanFormFields();
 
+                this.Close();
             }
             else
             {
@@ -102,7 +118,7 @@ namespace frmDashboard
             placeNumberValue.Clear();
             prizeAmountValue.Text = "0";
             prizePercentageValue.Text = "0";
-            
+
         }
 
         #endregion

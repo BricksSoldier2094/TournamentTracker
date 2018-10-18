@@ -114,7 +114,7 @@ namespace TrackerLibrary.DataAcess
         }
 
         /// <summary>
-        /// Get all the People available in the Members file on Text DataBase.
+        /// Get all the People available in the Member's file on Text DataBase.
         /// </summary>
         /// <returns></returns>
         public List<PersonModel> GetPerson_All()
@@ -122,9 +122,13 @@ namespace TrackerLibrary.DataAcess
             return PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
         }
 
+        /// <summary>
+        /// Get all the Teams available in the Team's file on Text DataBase.
+        /// </summary>
+        /// <returns></returns>
         public List<TeamModel> GetTeam_All()
         {
-            throw new NotImplementedException();
+            return TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
         }
     }
 }
