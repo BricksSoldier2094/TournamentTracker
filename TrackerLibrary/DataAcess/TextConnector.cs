@@ -114,6 +114,17 @@ namespace TrackerLibrary.DataAcess
         }
 
         /// <summary>
+        /// Create a new Tournament in the TournamentTracker Text DataBase, saves the related data about prizes
+        /// and participating teams in different files.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public TournamentModel CreateTournament(TournamentModel model)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
         /// Get all the People available in the Member's file on Text DataBase.
         /// </summary>
         /// <returns></returns>

@@ -36,6 +36,13 @@ namespace TrackerLibrary.DataAcess
         TeamModel CreateTeam(TeamModel model);
 
         /// <summary>
+        /// A contract clausule. Implements the method to create a new Tournament in the database.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        TournamentModel CreateTournament(TournamentModel model);
+
+        /// <summary>
         ///   A contract clausule. Implements the method to get all the teams available in the database
         /// </summary>
         /// <returns></returns>

@@ -13,6 +13,11 @@ namespace TrackerLibrary.Models
     {
 
         /// <summary>
+        /// The unique identifier for the Tournament
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
         /// The tournament's name
         /// </summary>
         public string TournamentName { get; set; }
@@ -26,7 +31,7 @@ namespace TrackerLibrary.Models
         /// <summary>
         /// A list of team that will participate in the tournament
         /// </summary>
-        public List<TeamModel> EnteredTeam { get; set; } = new List<TeamModel>();
+        public List<TeamModel> EnteredTeams { get; set; } = new List<TeamModel>();
 
         /// <summary>
         /// The list of prizes offered for the participants of the tournament
