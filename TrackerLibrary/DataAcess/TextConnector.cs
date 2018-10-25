@@ -31,6 +31,12 @@ namespace TrackerLibrary.DataAcess
         private const string TeamFile = "TeamModels.csv";
 
         /// <summary>
+        /// The name of the file that keeps the data of the Tournaments created
+        /// </summary>
+        private const string TournamentFile = "TournamentModels.csv";
+
+
+        /// <summary>
         /// Create a new person in the TournamentTracker Text DataBase
         /// </summary>
         /// <param name="model"></param>
@@ -108,7 +114,7 @@ namespace TrackerLibrary.DataAcess
 
             Teams.Add(model);
 
-            Teams.SaveToTeamsFile(TeamFile);
+            Teams.SaveToTeamFile(TeamFile);
 
             return model;
         }
@@ -119,9 +125,25 @@ namespace TrackerLibrary.DataAcess
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public TournamentModel CreateTournament(TournamentModel model)
+        public void CreateTournament(TournamentModel model)
         {
-            throw new NotImplementedException();
+            List<TournamentModel> tournaments = TournamentFile.
+                FullFilePath().
+                LoadFile().
+                ConvertToTournamentModels(TeamFile, PeopleFile, PrizesFile);
+
+            int CurrentId = 1;
+
+            if(tournaments.Count > 0)
+            {
+                CurrentId = tournaments.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+
+            model.Id = CurrentId;
+
+            tournaments.Add(model);
+
+            tournaments.SaveTournamentFile(TournamentFile);
         }
 
         /// <summary>

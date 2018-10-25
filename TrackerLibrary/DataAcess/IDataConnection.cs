@@ -40,7 +40,7 @@ namespace TrackerLibrary.DataAcess
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        TournamentModel CreateTournament(TournamentModel model);
+        void CreateTournament(TournamentModel model);
 
         /// <summary>
         ///   A contract clausule. Implements the method to get all the teams available in the database

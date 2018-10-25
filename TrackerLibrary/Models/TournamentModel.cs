@@ -41,7 +41,7 @@ namespace TrackerLibrary.Models
         /// <summary>
         /// The list of list of Matchup Entries, that means the rounds of the tournament
         /// </summary>
-        public List<List<MatchupEntryModel>> Rounds { get; set; } = new List<List<MatchupEntryModel>>();
+        public List<List<MatchupModel>> Rounds { get; set; } = new List<List<MatchupModel>>();
 
 
     }
